@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="/elektronika/style.css">
+  <script src="/elektronika/sw.js"></script>
+  <link rel="manifest" href="/elektronika/manifest.json">
+  <link rel="icon" href="/elektronika/favicon.png" sizes="626x626">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+  </script>
+  <title>Maturita Elektronika</title>
+</head>
+<body>
+  <div id="time-display-container">
+    <img src="/elektronika/logo.png" alt="Image" id="time-image">
+    <div id="time-display" class="time-display"></div>
+  </div>
+  <div id="gradient-container">
+    <div class="gradient"></div>
+  </div>
+  <div class="container">
+    <div id="content" class="hidden">
+      <div class="buttons-container">
+        <button><span class="button-number">1</span>Děliče napětí</button>
+        <button><span class="button-number">2</span>Usměrňovače</button>
+        <button><span class="button-number">3</span>Stabilizátory napětí</button>
+        <button><span class="button-number">4</span>Zesilovače</button>
+        <button><span class="button-number">5</span>Jednostupňový zesilovač s bip. tran. v zapojení SE</button>
+        <button><span class="button-number">6</span>Pracovní bod zesilovače</button>
+        <button><span class="button-number">7</span>Vícestupňové zesilovače</button>
+        <button><span class="button-number">8</span>Operační zesilovač</button>
+        <button><span class="button-number">9</span>Základní zapojení s operačním zesilovačem</button>
+        <button><span class="button-number">10</span>Oscilátory LC, RC, s krystalem</button>
+        <button><span class="button-number">11</span>Analogové modulace AM, FM</button>
+        <button><span class="button-number">12</span>Diskrétní (impulsové) modulace</button>
+        <button><span class="button-number">13</span>Impulsové obvody</button>
+        <button><span class="button-number">14</span>Integrační a derivační článek</button>
+        <button><span class="button-number">15</span>Klopné obvody</button>
+        <button><span class="button-number">16</span>Technika velmi vysokých kmitočtů</button>
+        <button><span class="button-number">17</span>Vznik a šíření elektromagnetických vln</button>
+        <button><span class="button-number">18</span>Elektroakustika - vznik a šíření vln</button>
+        <button><span class="button-number">19</span>Elektroakustika - vlastnosti vln</button>
+        <button><span class="button-number">20</span>Optoelektronika - optické vlákno</button>
+        <button><span class="button-number">21</span>Optoelektronika - výhody a poižití v praxi</button>
+        <button><span class="button-number">22</span>Základní pojmy z číslicové techniky</button>
+        <button><span class="button-number">23</span>Způsoby vyjádření logických funkcí</button>
+        <button><span class="button-number">24</span>Klopný obvod (RS, RST, JK, D)</button>
+        <button><span class="button-number">25</span>Kombinační a sekvenční logické obvody</button>
+      </div>
+    </div>
+    <!-- Obsahové divy pro každý obsah -->
+    <div id="content-1" class="content hidden"></div>
+    <div id="content-2" class="content hidden"></div>
+    <div id="content-3" class="content hidden"></div>
+    <div id="content-4" class="content hidden"></div>
+    <div id="content-5" class="content hidden"></div>
+    <div id="content-6" class="content hidden"></div>
+    <div id="content-7" class="content hidden"></div>
+    <div id="content-8" class="content hidden"></div>
+    <div id="content-9" class="content hidden"></div>
+    <div id="content-10" class="content hidden"></div>
+    <div id="content-11" class="content hidden"></div>
+    <div id="content-12" class="content hidden"></div>
+    <div id="content-13" class="content hidden"></div>
+    <div id="content-14" class="content hidden"></div>
+    <div id="content-15" class="content hidden"></div>
+    <div id="content-16" class="content hidden"></div>
+    <div id="content-17" class="content hidden"></div>
+    <div id="content-18" class="content hidden"></div>
+    <div id="content-19" class="content hidden"></div>
+    <div id="content-20" class="content hidden"></div>
+    <div id="content-21" class="content hidden"></div>
+    <div id="content-22" class="content hidden"></div>
+    <div id="content-23" class="content hidden"></div>
+    <div id="content-24" class="content hidden"></div>
+    <div id="content-25" class="content hidden"></div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Detekce mobilního zařízení
+      var isMobile = window.innerWidth <= 600;
+
+      if (isMobile) {
+        // Přizpůsobení pro mobilní zobrazení
+        document.documentElement.style.overflowX = 'hidden';
+        document.body.style.overflowX = 'hidden';
+
+        // Kontrola správného nastavení pro PDF
+        document.addEventListener('click', function(e) {
+          if (e.target && e.target.matches('button')) {
+            setTimeout(function() {
+              var pdfObjects = document.querySelectorAll('object[type="application/pdf"]');
+              pdfObjects.forEach(function(obj) {
+                obj.style.width = '100%';
+                obj.style.height = '100%';
+              });
+            }, 500);
+          }
+        });
+      }
+    });
+  </script>
+
+  <script src="/elektronika/script.js"></script>
+</body>
+</html>
